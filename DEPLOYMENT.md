@@ -34,6 +34,22 @@ The code refers to these runtime values, but actual secret values are not stored
 
 ## GitHub Deploy Key
 
-Create a separate deploy key for this repo. Do not reuse private keys across repos.
+Use this public SSH key as a GitHub deploy key for the repository:
 
-Only public SSH keys should be added to GitHub or documentation. Never commit a private key.
+```text
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICK88VfbN/+paxHQP0AiAML0duyfIdkbRbvjn1fAVfte s2800-GH-studio2800.com
+```
+
+GitHub path:
+
+1. Repository `Settings`
+2. `Deploy keys`
+3. `Add deploy key`
+4. Title: `Studio2800 Codex Push Key`
+5. Paste the public key above
+6. Enable `Allow write access`
+7. Save
+
+Security note:
+- Only the public key belongs in documentation or GitHub.
+- Do not commit or share the private key file.
