@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Metrics | Studio2800 Admin</title>
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.jpg">
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="../../index.html">
+        <img src="../../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 metrics</span>
+      </a>
+      <div class="admin-header-actions">
+        <a class="button secondary" href="../../admin.html">Admin</a>
+        <a class="button secondary" href="../../index.html">View site</a>
+      </div>
+    </header>
+    <main class="admin-main">
+      <section class="admin-gate" data-metrics-gate>
+        <div>
+          <p class="eyebrow">Admin-only metrics</p>
+          <h1>Unlock metrics.</h1>
+          <p>Use the Studio2800 admin password to view traffic, account, RSS, and error activity.</p>
+        </div>
+        <form class="admin-login" data-metrics-login>
+          <label><span>Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="button primary" type="submit">Unlock metrics</button>
+          <p class="admin-status" data-metrics-status aria-live="polite"></p>
+        </form>
+      </section>
+
+      <div data-metrics-content hidden>
+        <section class="admin-hero">
+          <p class="eyebrow">Metrics</p>
+          <h1>Website activity dashboard.</h1>
+          <p>Privacy-light operational metrics for traffic, content, accounts, RSS, and recent site errors.</p>
+        </section>
+
+        <div class="filter-row" data-metrics-filters>
+          <button class="button secondary" type="button" data-range="today" aria-pressed="false">Today</button>
+          <button class="button secondary" type="button" data-range="7d" aria-pressed="true">Last 7 days</button>
+          <button class="button secondary" type="button" data-range="30d" aria-pressed="false">Last 30 days</button>
+          <button class="button secondary" type="button" data-range="all" aria-pressed="false">All time</button>
+        </div>
+
+        <section class="metrics-grid" data-metrics-cards>
+          <article class="metric-card"><span>Total page views</span><strong>--</strong></article>
+          <article class="metric-card"><span>Unique visitors</span><strong>--</strong></article>
+          <article class="metric-card"><span>Published content</span><strong>--</strong></article>
+          <article class="metric-card"><span>New accounts</span><strong>--</strong></article>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Most viewed</p>
+              <h2>Top pages</h2>
+            </div>
+            <span class="admin-status" data-metrics-status-inline></span>
+          </div>
+          <div class="submission-table-wrap">
+            <table class="submission-table" data-pages-table>
+              <thead><tr><th>Page</th><th>Views</th></tr></thead>
+              <tbody><tr><td colspan="2">Loading</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Traffic sources</p>
+              <h2>Source report</h2>
+            </div>
+          </div>
+          <div class="submission-table-wrap">
+            <table class="submission-table" data-referrers-table>
+              <thead><tr><th>Source</th><th>Visits</th></tr></thead>
+              <tbody><tr><td colspan="2">Loading</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Weekly AI evaluation</p>
+              <h2>Traffic summary and next steps</h2>
+            </div>
+          </div>
+          <div class="weekly-report" data-weekly-report>
+            <p>Loading weekly report.</p>
+          </div>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Site health</p>
+              <h2>Recent errors</h2>
+            </div>
+          </div>
+          <ul class="error-list" data-errors-list>
+            <li>Loading</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <script src="metrics.js"></script>
+  </body>
+</html>

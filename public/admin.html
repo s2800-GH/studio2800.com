@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Studio2800 Admin</title>
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="index.html" aria-label="Back to studio2800.com">
+        <img src="assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 admin</span>
+      </a>
+      <div class="admin-header-actions">
+        <button class="button secondary" type="button" data-admin-logout hidden>Sign out</button>
+        <a class="button secondary" href="admin/metrics/">Metrics</a>
+        <a class="button secondary" href="index.html#showcase">View site</a>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-gate" data-admin-gate aria-labelledby="admin-gate-title">
+        <div>
+          <p class="eyebrow">Private admin</p>
+          <h1 id="admin-gate-title">Enter password.</h1>
+          <p>Unlock the Studio2800 video links and inquiry spreadsheet tools.</p>
+        </div>
+        <form class="admin-login" data-admin-login>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" autocomplete="current-password" required>
+          </label>
+          <button class="button primary" type="submit">Unlock admin</button>
+          <p class="admin-status" data-admin-login-status aria-live="polite"></p>
+        </form>
+      </section>
+
+      <div data-admin-content hidden>
+        <section class="admin-hero">
+          <p class="eyebrow">Control panel</p>
+          <h1>Video links and inquiry data.</h1>
+          <p>
+            Add YouTube links for the 9 showcase players and view live inquiry data in a spreadsheet-style table.
+          </p>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="video-admin-title">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Video showcase</p>
+              <h2 id="video-admin-title">9 YouTube video URLs</h2>
+            </div>
+            <div class="admin-actions">
+              <button class="button secondary" type="button" data-clear-videos>Clear</button>
+              <button class="button primary" type="button" data-save-videos>Save links</button>
+            </div>
+          </div>
+
+          <form class="video-admin-grid" data-video-form>
+            <label>
+              <span>01 Launch Campaign</span>
+              <input name="video-1" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>02 AI Explainer</span>
+              <input name="video-2" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>03 Short-Form Clip</span>
+              <input name="video-3" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>04 Product Demo</span>
+              <input name="video-4" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>05 Social Ad</span>
+              <input name="video-5" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>06 Training Clip</span>
+              <input name="video-6" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>07 Sales Enablement</span>
+              <input name="video-7" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>08 Process Walkthrough</span>
+              <input name="video-8" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label>
+              <span>09 Platform Demo</span>
+              <input name="video-9" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+          </form>
+          <p class="admin-status" data-video-status aria-live="polite"></p>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="submissions-admin-title">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Form submissions</p>
+              <h2 id="submissions-admin-title">Inquiry spreadsheet</h2>
+            </div>
+            <div class="admin-actions">
+              <button class="button primary" type="button" data-refresh-submissions>Refresh</button>
+            </div>
+          </div>
+
+          <div class="table-toolbar">
+            <span data-submission-count>0 rows</span>
+            <span class="admin-status" data-submission-status aria-live="polite"></span>
+          </div>
+
+          <div class="submission-table-wrap">
+            <table class="submission-table" data-submission-table>
+              <thead>
+                <tr>
+                  <th>Loading submissions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sign in to load inquiry data from Cloudflare.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

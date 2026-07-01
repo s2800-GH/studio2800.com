@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log In | Studio2800</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.jpg">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="../index.html">
+        <img src="../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 login</span>
+      </a>
+      <div class="admin-header-actions">
+        <a class="button secondary" href="../signup/">Create account</a>
+        <a class="button secondary" href="../index.html">View site</a>
+      </div>
+    </header>
+    <main class="auth-shell">
+      <section class="auth-card">
+        <div>
+          <p class="eyebrow">Private access</p>
+          <h1>Log in.</h1>
+          <p class="muted">Access your Studio2800 account area.</p>
+        </div>
+        <form class="auth-form" data-login-form>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label><span>Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="button primary" type="submit">Log in</button>
+          <p class="admin-status" data-auth-status aria-live="polite"></p>
+        </form>
+        <div class="auth-links">
+          <a href="../signup/">Create an account</a>
+        </div>
+      </section>
+    </main>
+    <script src="../auth.js?v=20260626-enhancements"></script>
+  </body>
+</html>

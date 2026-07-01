@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account | Studio2800</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.jpg">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="../index.html">
+        <img src="../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 account</span>
+      </a>
+      <div class="admin-header-actions">
+        <button class="button secondary" type="button" data-logout>Log out</button>
+        <a class="button secondary" href="../index.html">View site</a>
+      </div>
+    </header>
+    <main class="admin-main">
+      <section class="admin-hero">
+        <p class="eyebrow">Account</p>
+        <h1><span data-account-name>Your Studio2800 access</span>.</h1>
+        <p data-account-summary>Private account features will appear here as the website grows.</p>
+      </section>
+      <section class="profile-tabs" aria-label="Account information">
+        <a class="profile-tab is-active" href="#profile">Profile</a>
+        <a class="profile-tab" href="../admin.html">Admin</a>
+        <a class="profile-tab" href="../admin/metrics/">Metrics</a>
+      </section>
+      <section class="profile-grid" id="profile" data-account-panel>
+        <article class="profile-card"><span>Status</span><strong>Loading</strong></article>
+      </section>
+      <p class="admin-status" data-auth-status aria-live="polite"></p>
+    </main>
+    <script src="../auth.js?v=20260626-enhancements"></script>
+  </body>
+</html>

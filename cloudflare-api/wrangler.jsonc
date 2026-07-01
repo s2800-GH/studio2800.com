@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "studio2800-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-19",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://studio2800-dev.jason-danyliw.workers.dev,https://studio2800.pages.dev,https://studio2800.com,https://www.studio2800.com",
+    "ADMIN_EMAIL": "studio2800@gmail.com",
+    "GOOGLE_ADS_CLIENT_ID": "",
+    "GOOGLE_ADS_SLOT_ID": "",
+    "GOOGLE_ADS_ENABLED": "false"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "studio2800-leads",
+      "database_id": "917320e2-6309-4bad-b732-1d5d96fb3b40"
+    }
+  ]
+}

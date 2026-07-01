@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Account | Studio2800</title>
+    <meta name="description" content="Create a Studio2800 account for future AI video production tools and client access.">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.jpg">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="../index.html">
+        <img src="../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 account</span>
+      </a>
+      <div class="admin-header-actions">
+        <a class="button secondary" href="../login/">Log in</a>
+        <a class="button secondary" href="../index.html">View site</a>
+      </div>
+    </header>
+    <main class="auth-shell">
+      <section class="auth-card">
+        <div>
+          <p class="eyebrow">Account access</p>
+          <h1>Create account.</h1>
+          <p class="muted">Set up a Studio2800 account for future client tools, saved projects, and private resources.</p>
+        </div>
+        <form class="auth-form" data-signup-form>
+          <label><span>Name</span><input name="displayName" type="text" autocomplete="name" required></label>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label><span>Password</span><input name="password" type="password" autocomplete="new-password" minlength="10" required></label>
+          <label><span>Confirm password</span><input name="confirmPassword" type="password" autocomplete="new-password" minlength="10" required></label>
+          <button class="button primary" type="submit">Create account</button>
+          <p class="admin-status" data-auth-status aria-live="polite"></p>
+        </form>
+        <div class="auth-links">
+          <a href="../login/">Already have an account?</a>
+        </div>
+      </section>
+    </main>
+    <script src="../auth.js?v=20260626-enhancements"></script>
+  </body>
+</html>
