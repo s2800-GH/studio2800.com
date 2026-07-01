@@ -33,3 +33,4 @@ Before any production deploy:
 
 - The live `www.studio2800.com` page was reachable when this package was prepared.
 - The bare `studio2800.com` request was slow/timed out during one CLI capture attempt, so confirm both apex and `www` before any DNS or production changes.
+- Netlify has been moved to `beta-archive/netlify-retirement-2026-06-30/` as a reference-only archive. Netlify should not be used for normal production deploys.
