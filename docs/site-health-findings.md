@@ -13,7 +13,7 @@ One live lead-capture defect was found and fixed during this cleanup: the public
 | Severity | Area | Finding | Fix | Verification |
 | --- | --- | --- | --- | --- |
 | High | Contact form / lead capture | Default public form selection was rejected by `/api/submissions` with HTTP 400. | Added `Studio Central design-partner pilot` to the Worker `allowedProjects` list in `cloudflare-api/src/index.js`. | Deployed Worker version `b56f8fb2-84da-4459-beb7-960e53d801b9`; repeated default-form POST returned HTTP 201 with `email: sent`. |
-| Medium | GitHub backup | GitHub backup was stale at commit `d174106` from 2026-06-30 and did not include current Cloudflare production files. | Refreshed `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com` with current `outputs/`, `cloudflare-api/`, and operational docs, then pushed to GitHub. | Remote `git@github.com:s2800-GH/studio2800.com.git` includes backup refresh commit `7c4032f` (`Refresh Cloudflare production backup`) and follow-up docs commit `cbc6ea2` (`Update GitHub backup status docs`). |
+| Medium | GitHub backup | GitHub backup was stale at commit `d174106` from 2026-06-30 and did not include current Cloudflare production files. | Refreshed `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com` with current `outputs/`, `cloudflare-api/`, and operational docs, then pushed to GitHub. | Remote `git@github.com:s2800-GH/studio2800.com.git` includes backup refresh commit `7c4032f` (`Refresh Cloudflare production backup`) plus later documentation-status commits. |
 
 ## Verified Live Systems
 
