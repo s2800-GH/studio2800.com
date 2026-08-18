@@ -3,32 +3,40 @@
   <channel>
     <title>Studio2800 AI Video Content Feed</title>
     <link>https://studio2800.com/</link>
-    <description>Published Studio2800 AI video production services, systems, and showcase updates.</description>
+    <description>Studio2800 updates on Studio Central, AI video production services, production systems, and showcase work.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Studio Central — Studio2800's Agent Production System</title>
+      <link>https://studio2800.com/</link>
+      <guid>https://studio2800.com/</guid>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Studio Central is Studio2800's flagship production system: a coordinated virtual agent crew, one shared production state, human approval gates, and controlled delivery.</description>
+      <author>Studio2800</author>
+    </item>
     <item>
       <title>AI Video Content Creation</title>
-      <link>https://studio2800.com/#showcase</link>
-      <guid>https://studio2800.com/#showcase</guid>
+      <link>https://studio2800.com/services/#showcase</link>
+      <guid>https://studio2800.com/services/#showcase</guid>
       <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
       <description>AI video production examples, featured video players, campaign formats, LMS content creation, and Studio2800 planning visuals.</description>
-      <author>studio2800@gmail.com (Studio2800)</author>
+      <author>Studio2800</author>
     </item>
     <item>
       <title>The AI Media Generation System</title>
-      <link>https://studio2800.com/#process</link>
-      <guid>https://studio2800.com/#process</guid>
+      <link>https://studio2800.com/services/#process</link>
+      <guid>https://studio2800.com/services/#process</guid>
       <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
       <description>A repeatable Studio2800 process for faster, lower-cost, brand-consistent AI video production.</description>
-      <author>studio2800@gmail.com (Studio2800)</author>
+      <author>Studio2800</author>
     </item>
     <item>
       <title>Studio2800 AI Video Services</title>
-      <link>https://studio2800.com/#services</link>
-      <guid>https://studio2800.com/#services</guid>
+      <link>https://studio2800.com/services/#services</link>
+      <guid>https://studio2800.com/services/#services</guid>
       <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
       <description>AI video editing, image generation, motion graphics, YouTube channel management, platform management, and white-glove AI video subscription services.</description>
-      <author>studio2800@gmail.com (Studio2800)</author>
+      <author>Studio2800</author>
     </item>
   </channel>
 </rss>

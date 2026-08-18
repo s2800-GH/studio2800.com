@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css?v=20260816-studio-central-2">
   </head>
   <body class="admin-body">
     <header class="admin-header">
@@ -23,8 +23,9 @@
       </a>
       <div class="admin-header-actions">
         <button class="button secondary" type="button" data-admin-logout hidden>Sign out</button>
+        <a class="button secondary" href="dashboard/">Dashboard</a>
         <a class="button secondary" href="admin/metrics/">Metrics</a>
-        <a class="button secondary" href="index.html#showcase">View site</a>
+        <a class="button secondary" href="/services/#showcase">View site</a>
       </div>
     </header>
 
@@ -107,6 +108,50 @@
           <p class="admin-status" data-video-status aria-live="polite"></p>
         </section>
 
+        <section class="admin-panel" aria-labelledby="visibility-admin-title">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Site visibility</p>
+              <h2 id="visibility-admin-title">Livestream page</h2>
+            </div>
+            <div class="admin-actions">
+              <button class="button primary" type="button" data-save-site-settings>Save visibility</button>
+            </div>
+          </div>
+
+          <label class="toggle-row">
+            <input type="checkbox" data-livestream-enabled>
+            <span class="toggle-control" aria-hidden="true"></span>
+            <span>
+              <strong>Show Livestream page publicly</strong>
+              <small>When off, the navigation link stays hidden and the direct page shows an unpublished message.</small>
+            </span>
+          </label>
+          <p class="admin-status" data-site-settings-status aria-live="polite"></p>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="notifications-admin-title">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="eyebrow">Notifications</p>
+              <h2 id="notifications-admin-title">SMS and app backup</h2>
+            </div>
+            <div class="admin-actions">
+              <button class="button secondary" type="button" data-refresh-notification-status>Refresh status</button>
+              <button class="button secondary" type="button" data-test-notification-failover>Test failover</button>
+            </div>
+          </div>
+
+          <div class="notification-status-grid" data-notification-status>
+            <article class="notification-status-card">
+              <span>Loading</span>
+              <strong>Checking notification setup</strong>
+              <p>Sign in to load Cloudflare configuration status.</p>
+            </article>
+          </div>
+          <p class="admin-status" data-notification-status-text aria-live="polite"></p>
+        </section>
+
         <section class="admin-panel" aria-labelledby="submissions-admin-title">
           <div class="admin-panel-heading">
             <div>
@@ -114,6 +159,9 @@
               <h2 id="submissions-admin-title">Inquiry spreadsheet</h2>
             </div>
             <div class="admin-actions">
+              <button class="button secondary" type="button" data-test-lead-email>Send test email</button>
+              <button class="button secondary" type="button" data-test-lead-sms>Send test text</button>
+              <button class="button secondary" type="button" data-test-lead-push>Send test push</button>
               <button class="button primary" type="button" data-refresh-submissions>Refresh</button>
             </div>
           </div>

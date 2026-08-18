@@ -1,55 +1,48 @@
 # Deployment Notes
 
-This repo is intended to preserve the Studio2800 site source in GitHub before any future deployment wiring.
+This repository is the current GitHub backup for `studio2800.com`, not the source of truth for automatic production deploys unless explicitly connected later.
 
-## Suggested GitHub Repository
+## Current Production Path
 
-Recommended repository name:
+1. Local source is maintained in:
+   `/Users/jasondanyliw/Documents/Codex/2026-06-15/build-a-website`
+2. Static public files are in:
+   `outputs/`
+3. Cloudflare Pages serves:
+   `studio2800.com`, `www.studio2800.com`, and `studio2800.pages.dev`
+4. Dynamic functions are handled by:
+   `cloudflare-api/src/index.js`
+5. Data is stored in:
+   Cloudflare D1 database `studio2800-leads`
 
-```text
-studio2800.com
-```
+## Before Deploying Static Pages
 
-Owner:
+- Create a rollback marker.
+- Confirm `public/_headers` includes security headers.
+- Confirm `public/_redirects` includes expected redirects.
+- Test home, services, admin shell, metrics shell, dashboard, Livestream, signup, login, account, thanks, RSS, sitemap, and robots.
+- Check mobile layout for the video carousel and key navigation.
+- Do not expose private admin/demo functions publicly.
 
-```text
-s2800-GH
-```
+## Before Deploying Worker API
 
-## Safe Flow
+- Create a rollback marker.
+- Run a JavaScript syntax check against `cloudflare-api/src/index.js`.
+- Confirm `cloudflare-api/wrangler.jsonc` still points to Worker `studio2800-api`.
+- Confirm D1 binding `DB` still targets `studio2800-leads`.
+- Confirm required secrets exist in Cloudflare.
+- Test `/api/health`.
+- Test unauthenticated admin endpoints return HTTP 401.
+- Test the public contact form path.
 
-1. Push this source package to GitHub.
-2. Confirm the repository files look correct.
-3. Do not enable automatic production deploys until a preview is tested.
-4. If using Cloudflare Pages, connect `public/` as the static output folder.
-5. If deploying the API Worker, confirm `cloudflare-api/wrangler.jsonc` and all secrets/bindings.
+## Rollback Notes
 
-## Required Secrets / Bindings
+- Latest Worker rollback marker from operational cleanup:
+  `rollback-markers/20260818-operational-cleanup-pre-worker-fix/`
+- GitHub-ready repo pre-refresh restore archive:
+  `rollback-markers/github-ready-repo-pre-refresh-20260818/studio2800.com-source-pre-refresh.tar.gz`
 
-The code refers to these runtime values, but actual secret values are not stored in this repo:
+## Netlify
 
-- `ADMIN_PASSWORD`
-- `AUTH_SECRET`
-- D1 database binding: `DB`
+Netlify is legacy backup/reference only. Do not use Netlify for normal production deployment, DNS decisions, or launch decisions unless Jason explicitly reverses the Cloudflare-primary plan.
 
-## GitHub Deploy Key
-
-Use this public SSH key as a GitHub deploy key for the repository:
-
-```text
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICK88VfbN/+paxHQP0AiAML0duyfIdkbRbvjn1fAVfte s2800-GH-studio2800.com
-```
-
-GitHub path:
-
-1. Repository `Settings`
-2. `Deploy keys`
-3. `Add deploy key`
-4. Title: `Studio2800 Codex Push Key`
-5. Paste the public key above
-6. Enable `Allow write access`
-7. Save
-
-Security note:
-- Only the public key belongs in documentation or GitHub.
-- Do not commit or share the private key file.

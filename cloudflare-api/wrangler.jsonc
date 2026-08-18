@@ -4,12 +4,31 @@
   "main": "src/index.js",
   "compatibility_date": "2026-06-19",
   "workers_dev": true,
+  "triggers": {
+    "crons": [
+      "0 * * * *"
+    ]
+  },
+  "send_email": [
+    {
+      "name": "EMAIL"
+    }
+  ],
   "vars": {
-    "ALLOWED_ORIGINS": "https://studio2800-dev.jason-danyliw.workers.dev,https://studio2800.pages.dev,https://studio2800.com,https://www.studio2800.com",
-    "ADMIN_EMAIL": "studio2800@gmail.com",
+    "ALLOWED_ORIGINS": "https://studio2800-dev.jason-danyliw.workers.dev,https://studio2800.pages.dev,https://studio2800.com,https://www.studio2800.com,https://studio2800news.com,https://www.studio2800news.com",
     "GOOGLE_ADS_CLIENT_ID": "",
     "GOOGLE_ADS_SLOT_ID": "",
-    "GOOGLE_ADS_ENABLED": "false"
+    "GOOGLE_ADS_ENABLED": "false",
+    "EMAIL_PROVIDER": "resend",
+    "REPORT_FREQUENCY": "weekly",
+    "REPORT_TIME_ZONE": "America/Detroit",
+    "REPORT_SEND_WEEKDAY": "1",
+    "REPORT_SEND_HOUR": "9",
+    "SMS_PROVIDER": "twilio",
+    "SMS_ENABLED": "true",
+    "PUSH_PROVIDER": "pushover",
+    "PUSH_ENABLED": "true",
+    "PUSH_ON_SMS_FAILURE": "true"
   },
   "d1_databases": [
     {

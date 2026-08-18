@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="title desc">
+  <title id="title">Studio2800 Cloudflare Site Setup Flowchart</title>
+  <desc id="desc">A process diagram showing Cloudflare DNS, Cloudflare Pages, the Studio2800 static site, Worker API, D1 database, admin metrics, and mail records.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8faf8}
+      .box{fill:#fff;stroke:#107982;stroke-width:3;rx:12}
+      .box-orange{fill:#fff8f2;stroke:#f26a1b;stroke-width:3;rx:12}
+      .box-dark{fill:#122526;stroke:#f26a1b;stroke-width:3;rx:12}
+      .box-soft{fill:#eefafa;stroke:#107982;stroke-width:2;rx:10}
+      .title{font:800 31px Arial, sans-serif;fill:#0b3538}
+      .subtitle{font:600 18px Arial, sans-serif;fill:#f26a1b}
+      .label{font:700 19px Arial, sans-serif;fill:#0b3538}
+      .small{font:500 15px Arial, sans-serif;fill:#243b3c}
+      .dark-label{font:800 20px Arial, sans-serif;fill:#fff}
+      .dark-small{font:500 15px Arial, sans-serif;fill:#d8eeee}
+      .arrow{stroke:#f26a1b;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .arrow-teal{stroke:#107982;stroke-width:4;fill:none;marker-end:url(#arrow-teal)}
+      .muted{fill:#5d6f70;font:500 14px Arial, sans-serif}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f26a1b"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#107982"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1280" height="900"/>
+
+  <text x="60" y="70" class="title">STUDIO2800 Cloudflare Site Setup</text>
+  <text x="60" y="104" class="subtitle">Cloudflare is production hosting. Netlify is retired from the workflow.</text>
+
+  <rect x="60" y="150" width="230" height="94" class="box-orange"/>
+  <text x="85" y="187" class="label">Visitor Browser</text>
+  <text x="85" y="215" class="small">studio2800.com</text>
+
+  <rect x="365" y="150" width="230" height="94" class="box"/>
+  <text x="390" y="187" class="label">Cloudflare DNS</text>
+  <text x="390" y="215" class="small">root + www CNAME</text>
+
+  <rect x="670" y="150" width="250" height="94" class="box"/>
+  <text x="695" y="187" class="label">Cloudflare Pages</text>
+  <text x="695" y="215" class="small">Project: studio2800</text>
+
+  <rect x="980" y="150" width="240" height="94" class="box-soft"/>
+  <text x="1005" y="187" class="label">Static Site</text>
+  <text x="1005" y="215" class="small">outputs/ files</text>
+
+  <path class="arrow" d="M 290 197 L 365 197"/>
+  <path class="arrow" d="M 595 197 L 670 197"/>
+  <path class="arrow" d="M 920 197 L 980 197"/>
+
+  <rect x="80" y="335" width="260" height="105" class="box-soft"/>
+  <text x="108" y="373" class="label">Public Pages</text>
+  <text x="108" y="402" class="small">Home, thanks, RSS</text>
+  <text x="108" y="426" class="small">Video carousel</text>
+
+  <rect x="400" y="335" width="260" height="105" class="box-soft"/>
+  <text x="428" y="373" class="label">Admin Pages</text>
+  <text x="428" y="402" class="small">/admin</text>
+  <text x="428" y="426" class="small">/admin/metrics/</text>
+
+  <rect x="735" y="335" width="260" height="105" class="box-dark"/>
+  <text x="763" y="373" class="dark-label">Worker API</text>
+  <text x="763" y="402" class="dark-small">studio2800-api</text>
+  <text x="763" y="426" class="dark-small">Auth, leads, metrics</text>
+
+  <rect x="735" y="535" width="260" height="125" class="box"/>
+  <text x="763" y="575" class="label">Cloudflare D1</text>
+  <text x="763" y="604" class="small">studio2800-leads</text>
+  <text x="763" y="628" class="small">Submissions, video URLs,</text>
+  <text x="763" y="652" class="small">page views, users, errors</text>
+
+  <rect x="80" y="535" width="260" height="125" class="box-orange"/>
+  <text x="108" y="575" class="label">Forms + Metrics</text>
+  <text x="108" y="604" class="small">Inquiry form posts to API</text>
+  <text x="108" y="628" class="small">Metrics page requires</text>
+  <text x="108" y="652" class="small">ADMIN_PASSWORD secret</text>
+
+  <rect x="400" y="535" width="260" height="125" class="box-orange"/>
+  <text x="428" y="575" class="label">Video Management</text>
+  <text x="428" y="604" class="small">Admin edits 9 URLs</text>
+  <text x="428" y="628" class="small">D1 stores the list</text>
+  <text x="428" y="652" class="small">Public carousel reads API</text>
+
+  <path class="arrow-teal" d="M 1095 244 C 1095 310 1010 350 995 382"/>
+  <path class="arrow-teal" d="M 980 244 C 830 285 655 310 530 335"/>
+  <path class="arrow" d="M 340 388 L 400 388"/>
+  <path class="arrow" d="M 660 388 L 735 388"/>
+  <path class="arrow" d="M 865 440 L 865 535"/>
+  <path class="arrow" d="M 340 598 L 735 598"/>
+  <path class="arrow" d="M 660 598 L 735 598"/>
+
+  <rect x="60" y="735" width="350" height="90" class="box-soft"/>
+  <text x="88" y="773" class="label">GoDaddy Mail Records</text>
+  <text x="88" y="802" class="small">MX preserved: smtp.secureserver.net</text>
+
+  <rect x="465" y="735" width="350" height="90" class="box-soft"/>
+  <text x="493" y="773" class="label">Local Development</text>
+  <text x="493" y="802" class="small">Edit outputs/ and cloudflare-api/</text>
+
+  <rect x="870" y="735" width="350" height="90" class="box-soft"/>
+  <text x="898" y="773" class="label">Deploy</text>
+  <text x="898" y="802" class="small">deploy-production.sh -> Cloudflare Pages</text>
+
+  <path class="arrow-teal" d="M 235 735 C 310 700 360 670 400 625"/>
+  <path class="arrow-teal" d="M 815 780 L 870 780"/>
+
+  <text x="60" y="870" class="muted">Production: Cloudflare Pages + Worker API + D1. Netlify is not part of the active workflow.</text>
+</svg>

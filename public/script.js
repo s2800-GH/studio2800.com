@@ -1,6 +1,25 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 
+const legacyServiceSections = new Set(["#showcase", "#services", "#process", "#links", "#contact"]);
+if (window.location.pathname === "/" && legacyServiceSections.has(window.location.hash)) {
+  window.location.replace(`/services/${window.location.hash}`);
+}
+
+function restoreRequestedSection() {
+  const sectionId = window.location.hash.slice(1);
+  if (!sectionId || !/^[A-Za-z][\w:-]*$/.test(sectionId)) {
+    return;
+  }
+  document.getElementById(sectionId)?.scrollIntoView({ block: "start" });
+}
+
+function queueRequestedSectionRestore() {
+  [80, 650, 1600].forEach((delay) => {
+    window.setTimeout(restoreRequestedSection, delay);
+  });
+}
+
 navToggle?.addEventListener("click", () => {
   const isOpen = mobileNav.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -17,8 +36,7 @@ mobileNav?.addEventListener("click", (event) => {
 
 const videoStorageKey = "studio2800VideoUrls";
 const defaultVideoUrl = "https://youtu.be/E18RGsfK7-Y";
-const defaultVideoUrls = Array(9).fill(defaultVideoUrl);
-const temporaryVideoOverrideUrl = "https://youtu.be/E18RGsfK7-Y";
+const defaultVideoUrls = [defaultVideoUrl, "", "", "", "", "", "", "", ""];
 const apiBase = "https://studio2800-api.jason-danyliw.workers.dev";
 let carouselVideos = [];
 let activeVideoIndex = 0;
@@ -62,9 +80,12 @@ async function applySavedVideoUrls() {
   }
 
   const selectors = [...carousel.querySelectorAll("[data-video-selector]")];
+  const usedVideoUrls = new Set();
   carouselVideos = selectors.map((selector, index) => {
     const title = selector.textContent.trim() || `Video ${index + 1}`;
-    const url = temporaryVideoOverrideUrl || urls[index] || defaultVideoUrls[index] || "";
+    const candidateUrl = (urls[index] || defaultVideoUrls[index] || "").trim();
+    const url = candidateUrl && !usedVideoUrls.has(candidateUrl) ? candidateUrl : "";
+    if (url) usedVideoUrls.add(url);
     return {
       title,
       url,
@@ -120,7 +141,7 @@ function renderActiveVideo(index, shouldAutoplay = false) {
   setPlayerState(false);
 
   if (!video.id) {
-    frame.innerHTML = `<img class="video-poster" src="assets/s2800-logo.jpeg" alt="${video.title} video preview">`;
+    frame.innerHTML = `<img class="video-poster" src="/assets/s2800-logo.jpeg" alt="${video.title} video preview">`;
     note.textContent = "Add a YouTube URL in the admin page to load this featured player.";
     return;
   }
@@ -136,6 +157,9 @@ function renderActiveVideo(index, shouldAutoplay = false) {
     ></iframe>
     <img class="video-cover" src="${thumbnailUrl}" alt="" aria-hidden="true" loading="lazy">
   `;
+  frame.querySelector(".video-cover")?.addEventListener("error", (event) => {
+    event.currentTarget.remove();
+  }, { once: true });
   note.textContent = "Autoplay preview is active. Use the video buttons to switch the featured player.";
   if (shouldAutoplay) {
     setPlayerState(true);
@@ -231,7 +255,7 @@ contactForm?.addEventListener("submit", async (event) => {
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(result.error || "Unable to send your inquiry.");
-    window.location.assign("thanks.html");
+    window.location.assign("/thanks.html");
   } catch (error) {
     contactStatus.textContent = error.message;
     submitButton.disabled = false;
@@ -280,6 +304,27 @@ async function initAdPlaceholders() {
   }
 }
 
+async function initSiteSettings() {
+  const livestreamLinks = [...document.querySelectorAll("[data-livestream-link]")];
+  if (!livestreamLinks.length) {
+    return;
+  }
+  try {
+    const response = await fetch(`${apiBase}/api/site-settings`, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Site settings unavailable");
+    }
+    const { livestreamEnabled = false } = await response.json();
+    livestreamLinks.forEach((link) => {
+      link.hidden = !livestreamEnabled;
+    });
+  } catch {
+    livestreamLinks.forEach((link) => {
+      link.hidden = true;
+    });
+  }
+}
+
 function logClientError(message, detail = "") {
   try {
     fetch(`${apiBase}/api/errors`, {
@@ -307,4 +352,12 @@ window.addEventListener("unhandledrejection", (event) => {
 
 trackPageView();
 initAdPlaceholders();
-applySavedVideoUrls().then(initVideoShowcase);
+initSiteSettings();
+applySavedVideoUrls().then(() => {
+  initVideoShowcase();
+  queueRequestedSectionRestore();
+});
+
+window.addEventListener("load", () => {
+  queueRequestedSectionRestore();
+}, { once: true });

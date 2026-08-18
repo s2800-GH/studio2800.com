@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livestream | studio2800.com</title>
+    <meta
+      name="description"
+      content="Studio2800 livestream player for AI video, live feeds, production previews, and Studio2800News AIVN video programming."
+    >
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.jpg">
+    <link rel="canonical" href="https://studio2800.com/Livestream/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/styles.css?v=20260816-studio-central-2">
+  </head>
+  <body class="livestream-page" data-livestream-published="false">
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="studio2800.com home">
+        <img src="../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800.com</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="/">Studio Central</a>
+        <a href="/services/#showcase">Showcase</a>
+        <a href="/services/">Services</a>
+        <a href="/services/#process">Process</a>
+        <a href="../Livestream/" aria-current="page" data-livestream-link hidden>Livestream</a>
+        <a href="/services/#links">Links</a>
+        <a href="../signup/">Create account</a>
+        <a class="profile-nav-link" href="../account/" data-profile-link>Profile</a>
+        <a href="/services/#contact">Book a call</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
+      <a href="/">Studio Central</a>
+      <a href="/services/#showcase">Showcase</a>
+      <a href="/services/">Services</a>
+      <a href="/services/#process">Process</a>
+      <a href="../Livestream/" aria-current="page" data-livestream-link hidden>Livestream</a>
+      <a href="/services/#links">Links</a>
+      <a href="../signup/">Create account</a>
+      <a href="../account/" data-profile-link>Profile</a>
+      <a href="/services/#contact">Book a call</a>
+    </nav>
+
+    <main id="top" class="livestream-only" data-livestream-public hidden>
+      <section class="livestream-player-only" id="live-player" aria-label="Studio2800 livestream player">
+        <div class="studio-livestream" id="studio2800LiveStream">
+          <div class="livestream-shell">
+            <div class="livestream-frame" data-livestream-frame>
+              <div class="livestream-empty" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/script.js?v=20260816-studio-central-2"></script>
+    <script src="../auth.js?v=20260626-enhancements"></script>
+    <script src="livestream.js?v=20260701-player-only-clean"></script>
+  </body>
+</html>

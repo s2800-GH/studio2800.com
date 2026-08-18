@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Network Dashboard | Studio2800</title>
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicon-32.jpg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.jpg">
+    <link rel="stylesheet" href="/styles.css?v=20260816-studio-central-2">
+  </head>
+  <body class="admin-body dashboard-body">
+    <header class="admin-header">
+      <a class="brand" href="../index.html">
+        <img src="../assets/s2800-logo.jpeg" alt="" aria-hidden="true">
+        <span>studio2800 dashboard</span>
+      </a>
+      <div class="admin-header-actions">
+        <a class="button secondary" href="../admin.html">Admin</a>
+        <a class="button secondary" href="../admin/metrics/">Metrics</a>
+        <a class="button secondary" href="../index.html">View site</a>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-gate" data-dashboard-gate>
+        <div>
+          <p class="eyebrow">Network dashboard</p>
+          <h1>Unlock website metrics.</h1>
+          <p>View Studio2800 and Studio2800News traffic, unique viewers, region, and ad revenue estimates.</p>
+        </div>
+        <form class="admin-login" data-dashboard-login>
+          <label><span>Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="button primary" type="submit">Unlock dashboard</button>
+          <p class="admin-status" data-dashboard-status aria-live="polite"></p>
+        </form>
+      </section>
+
+      <div data-dashboard-content hidden>
+        <section class="dashboard-hero">
+          <div>
+            <p class="eyebrow">Network command view</p>
+            <h1>Studio2800 website performance.</h1>
+            <p>Segmented metrics for the business site and the AI video news property, ready for ad revenue estimates once ads reporting is active.</p>
+          </div>
+          <div class="dashboard-total-card" data-dashboard-total>
+            <span>Total estimated ad revenue</span>
+            <strong>$0.00</strong>
+            <small>Pending ad reporting</small>
+          </div>
+        </section>
+
+        <div class="filter-row dashboard-filters" data-dashboard-filters>
+          <button class="button secondary" type="button" data-range="today" aria-pressed="false">Today</button>
+          <button class="button secondary" type="button" data-range="7d" aria-pressed="true">Last 7 days</button>
+          <button class="button secondary" type="button" data-range="30d" aria-pressed="false">Last 30 days</button>
+          <button class="button secondary" type="button" data-range="all" aria-pressed="false">All time</button>
+          <span class="admin-status" data-dashboard-inline-status></span>
+        </div>
+
+        <section class="network-summary-grid" data-network-summary>
+          <article class="metric-card"><span>Total page views</span><strong>--</strong></article>
+          <article class="metric-card"><span>Unique viewers</span><strong>--</strong></article>
+          <article class="metric-card"><span>Estimated ad revenue</span><strong>--</strong></article>
+          <article class="metric-card"><span>Tracked sites</span><strong>2</strong></article>
+        </section>
+
+        <section class="dashboard-sites" data-site-panels>
+          <article class="admin-panel"><p>Loading network metrics.</p></article>
+        </section>
+      </div>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
