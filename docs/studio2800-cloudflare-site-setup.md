@@ -38,7 +38,7 @@ Last operational cleanup: 2026-08-18.
 
 ## GitHub Backup Status
 
-Current status as of 2026-08-18: the active website workspace `/Users/jasondanyliw/Documents/Codex/2026-06-15/build-a-website` is not itself a Git repository. The canonical GitHub-ready backup package is `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com`, with remote `git@github.com:s2800-GH/studio2800.com.git`. It was refreshed with the current Cloudflare production `outputs/`, `cloudflare-api/`, and operational docs, then pushed to `main` at commit `7c4032f` (`Refresh Cloudflare production backup`). Netlify remains preserved only under the repo's `beta-archive/` history and should not be used for normal production work.
+Current status as of 2026-08-18: the active website workspace `/Users/jasondanyliw/Documents/Codex/2026-06-15/build-a-website` is not itself a Git repository. The canonical GitHub-ready backup package is `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com`, with remote `git@github.com:s2800-GH/studio2800.com.git`. It was refreshed with the current Cloudflare production `outputs/`, `cloudflare-api/`, and operational docs, then pushed to `main` at commit `7c4032f` (`Refresh Cloudflare production backup`) with follow-up documentation status commit `cbc6ea2` (`Update GitHub backup status docs`). Netlify remains preserved only under the repo's `beta-archive/` history and should not be used for normal production work.
 
 ## Flowchart
 

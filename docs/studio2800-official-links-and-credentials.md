@@ -72,7 +72,8 @@ Current status as of 2026-08-18:
 - Current working folder Git status: not a Git repository.
 - Located GitHub-ready package: `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com`
 - Located Git remote: `git@github.com:s2800-GH/studio2800.com.git`
-- Current pushed commit: `7c4032f` from 2026-08-18, `Refresh Cloudflare production backup`
+- Production backup refresh commit: `7c4032f` from 2026-08-18, `Refresh Cloudflare production backup`
+- Follow-up documentation commit: `cbc6ea2` from 2026-08-18, `Update GitHub backup status docs`
 - Current conclusion: this GitHub-ready package now mirrors the current Cloudflare production source folders `outputs/` and `cloudflare-api/`, with current operational docs copied into `docs/`.
 - Operating rule: keep Cloudflare primary, keep Netlify under `beta-archive/` as legacy reference only, and refresh this GitHub backup after verified production changes.
 
