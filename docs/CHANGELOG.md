@@ -19,6 +19,7 @@ All notable Studio2800 website infrastructure, workflow, restore point, and prod
 - Verified `studio2800.com`, `www.studio2800.com`, `/services/`, `/feed.xml`, `/sitemap.xml`, `/robots.txt`, and Cloudflare Access protection for `demo.studio2800.com`.
 - Determined the existing GitHub-ready repository at `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com` points to `git@github.com:s2800-GH/studio2800.com.git` but is stale as of commit `d174106` from 2026-06-30 and should be treated as a historical Netlify/beta archive until refreshed.
 - Updated `site-health-findings.md`, setup notes, official links/credential reference, and the user manual source/PDF with the operational cleanup evidence and GitHub backup status.
+- Refreshed the GitHub-ready `studio2800.com` backup package with current Cloudflare production `outputs/`, `cloudflare-api/`, and operational docs; committed and pushed `7c4032f` (`Refresh Cloudflare production backup`) to `git@github.com:s2800-GH/studio2800.com.git`.
 
 ## 2026-08-16
 

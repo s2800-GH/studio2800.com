@@ -46,7 +46,7 @@ Last updated: 2026-08-18
 | Cloudflare DNS | DNS for `studio2800.com` | Free tier active | DNS records in Cloudflare zone |
 | Cloudflare Email Routing | Free inbound forwarding for domain email | Free tier active | `studio@studio2800.com` and `jdanyliw@studio2800.com` forward to the verified Studio2800 Gmail destination |
 | GoDaddy | Registrar | Paid externally | Domain registrar login. Root mail MX records are no longer GoDaddy-hosted. |
-| GitHub | Backup/source archive | Free unless upgraded | Existing repo is a stale historical archive until refreshed; see GitHub Backup Status below |
+| GitHub | Backup/source archive | Free unless upgraded | Current Cloudflare production backup pushed to `s2800-GH/studio2800.com`; see GitHub Backup Status below |
 | Resend | Transactional email provider | Free plan active | Account `jason.danyliw@gmail.com`, verified domain `studio2800.com`, `RESEND_API_KEY` secret set |
 | Twilio SMS | Optional text-message notification provider | Partially configured | Worker support is deployed with `SMS_ENABLED=true`; account SID and auth token are set, but sender and destination phone secrets are still missing |
 | Pushover | Optional app push fallback provider | Feature flag enabled; provider not configured | Worker support is deployed with `PUSH_ENABLED=true`; push remains blocked until Pushover app token and user key secrets are configured |
@@ -72,9 +72,9 @@ Current status as of 2026-08-18:
 - Current working folder Git status: not a Git repository.
 - Located GitHub-ready package: `/Users/jasondanyliw/Documents/Codex/2026-06-26/c/outputs/github-ready/studio2800.com`
 - Located Git remote: `git@github.com:s2800-GH/studio2800.com.git`
-- Last located commit: `d174106` from 2026-06-30, `Archive Netlify beta files`
-- Current conclusion: this GitHub-ready package is stale compared with the current Cloudflare production source. It is missing current files such as `services/`, `dashboard/`, `Livestream/`, `platform.css`, Studio Central assets, and recent Worker changes.
-- Operating rule: treat the found GitHub repo as a historical Netlify/beta archive until a separate approved backup pass refreshes or replaces it with the current Cloudflare production source.
+- Current pushed commit: `7c4032f` from 2026-08-18, `Refresh Cloudflare production backup`
+- Current conclusion: this GitHub-ready package now mirrors the current Cloudflare production source folders `outputs/` and `cloudflare-api/`, with current operational docs copied into `docs/`.
+- Operating rule: keep Cloudflare primary, keep Netlify under `beta-archive/` as legacy reference only, and refresh this GitHub backup after verified production changes.
 
 ## Credential And Secret Locations
 
